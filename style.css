@@ -1,295 +1,55 @@
-:root {
-  --background-main: #f2e8e1;
-  --tag: #d8d8d8;
-  --text-accent: #7866d1;
-  --footer-bg: #7a695d;
-  --header-bg: #e5d2c4;
+:root{--background-main:#f2e8e1;--tag:#d8d8d8;--text-accent:#7866d1;--footer-bg:#7a695d;--header-bg:#e5d2c4}
+html{font-family:"Nunito",sans-serif;font-optical-sizing:auto;font-style:normal;height:100%}
+body{margin:0;background-color:var(--background-main);min-height:100%;max-width:100%;display:flex;flex-direction:column;flex:auto 1fr auto;min-width:400px}
+footer{background-color:var(--footer-bg);color:#d8d8d8}
+address{font-style:normal}
+.wrap{max-width:800px;margin:auto;padding:5% 10%}
+.segundo_wrap{max-width:1000px;margin:0 auto;padding:10px 5%}
+.section_container,recipes__container{display:flex;flex-direction:row;flex-wrap:wrap;align-content:flex-start}
+a{text-decoration:none;color:inherit}
+.tag{background-color:var(--tag);border-radius:5px;font-size:12px;padding:5px 10px}
+.slider{display:flex;list-style:none;padding:0;margin:0;overflow:scroll;white-space:nowrap}
+.slider::-webkit-scrollbar{display:none}
+.slider ul{padding:0}
+.slider ul li{display:inline}
+.section__text-accent{display:inline-block}
+.section__text-accent :hover{transition:all .6s;color:var(--text-accent);display:inline-block;background-color:var(--tag);border-radius:5px}
+header{background-color:var(--header-bg)}
+.header__wrapper :not(:last-child){margin-bottom:10px}
+.header__section-upper{display:flex;flex-direction:row;align-items:baseline;justify-content:space-between}
+.logo h1{font-family:"Fira Code",monospace;font-optical-sizing:auto;font-weight:500;font-style:normal}
+nav ul{display:flex;justify-content:space-around;align-items:baseline;flex-direction:row;list-style-type:none}
+nav a{font-weight:700;padding:10px 20px}
+nav a:hover{transition:all .3s;background-color:var(--tag);border-radius:5px}
+.meals__container{display:flex;justify-content:strat;align-items:baseline;flex-wrap:wrap}
+.meals__item{margin:0 5px 5px}
+.meals__container :not(:last-child){margin-right:5px}
+.meals__container{padding-bottom:15px!important}
+.content_container{background-color:#f0f0f0;border-radius:15px;box-shadow:0 4px 6px rgba(0,0,0,0.1);padding:20px;max-width:900px;margin-bottom:20px}
+.recipe__item{padding-top:5px}
+.recipe__item-title{font-size:24px;font-weight:700;margin-bottom:10px}
+.recipe__item-instruction{font-size:14px;margin-bottom:20px}
+.recipe__instruction{margin:0}
+.recipe__item-tags{margin-left:0;padding-left:0;display:flex;justify-content:start}
+.recipe__item-tags :not(:last-child){margin-right:5px}
+.areas__container{width:100%}
+.slider li a{display:block;text-decoration:none;background-color:var(--tag);border-radius:5px;font-size:16px;padding:5px 15px;margin-right:5px}
+.slider li :hover{color:#fff;background-color:var(--text-accent);transition:all .6s}
+@media (width 900px) {
+.segundo_wrap{max-width:800px;margin:0 auto;padding:10px 10%}
 }
-
-html {
-  font-family: "Nunito", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  height: 100%;
+@media (width800px) {
+.header__section-upper{flex-direction:column;justify-content:center}
+.logo{margin:auto auto 0;margin-bottom:0}
+nav{margin:auto}
+nav ul{padding:0;flex-direction:column;align-items:center}
+.recipe__item:hover .hide_container-tags{display:block}
 }
-
-body {
-  margin: 0;
-  background-color: var(--background-main);
-  min-height: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex: auto 1fr auto;
-  min-width: 400px;
+@media (width600px) {
+.hide_container-instructions{display:none}
+.recipe__item:hover .hide_container-instructions{display:block}
 }
-
-/* .recipes__item>p {
-  color: blueviolet;
-} */
-
-footer {
-  background-color: var(--footer-bg);
-  color: #d8d8d8;
-}
-
-address {
-  font-style: normal;
-}
-
-/* -------------- Structure elements --------------  */
-.wrap {
-  max-width: 800px;
-  margin: auto;
-  padding: 5% 10%;
-}
-
-.segundo_wrap {
-  max-width: 1000px;
-  margin: 0px auto 0px;
-  padding: 10px 5%;
-}
-
-.section_container,
-recipes__container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-
-/* -------------- Reusable elements --------------  */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.tag {
-  background-color: var(--tag);
-  border-radius: 5px;
-  font-size: 12px;
-  padding: 5px 10px;
-}
-
-.slider {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow: scroll;
-  white-space: nowrap;
-}
-
-.slider::-webkit-scrollbar {
-  display: none
-}
-
-.slider ul {
-  padding: 0px;
-}
-
-.slider ul li {
-  display: inline;
-}
-
-.section__text-accent {
-  display: inline-block;
-}
-
-.section__text-accent :hover {
-  transition: all 0.6s;
-  color: var(--text-accent);
-  display: inline-block;
-  background-color: var(--tag);
-  border-radius: 5px;
-}
-
-/* General styles for the page */
-/* -------------- Navbar styles -------------- */
-header {
-  background-color: var(--header-bg);
-}
-
-.header__wrapper :not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.header__section-upper {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
-.logo h1 {
-  font-family: "Fira Code", monospace;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* Styles for the navigation menu */
-nav ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  flex-direction: row;
-  list-style-type: none;
-}
-
-nav a {
-  font-weight: bold;
-  padding: 10px 20px;
-}
-
-nav a:hover {
-  transition: all 0.3s;
-  background-color: var(--tag);
-  /* Change background color on hover */
-  border-radius: 5px;
-}
-
-.meals__container {
-  display: flex;
-  justify-content: strat;
-  align-items: baseline;
-  flex-wrap: wrap;
-}
-
-.meals__item {
-  margin: 0px 5px 5px;
-}
-
-.meals__container :not(:last-child) {
-  margin-right: 5px;
-}
-
-.meals__container {
-  padding-bottom: 15px !important;
-}
-
-/* -------------- Recipes container -------------- */
-.content_container {
-  background-color: #f0f0f0;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 900px;
-  margin-bottom: 20px;
-}
-
-.recipe__item {
-  padding-top: 5px;
-}
-
-/* Title */
-.recipe__item-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* Instruction */
-.recipe__item-instruction {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.recipe__instruction {
-  margin: 0;
-}
-
-/* Tags container */
-.recipe__item-tags {
-  margin-left: 0px;
-  padding-left: 0px;
-  display: flex;
-  justify-content: start;
-}
-
-/* Tags container */
-.recipe__item-tags :not(:last-child) {
-  margin-right: 5px;
-}
-
-/* -------------- Header areas alider -------------- */
-.areas__container {
-  width: 100%;
-}
-
-.slider li a {
-  display: block;
-  text-decoration: none;
-  background-color: var(--tag);
-  border-radius: 5px;
-  font-size: 16px;
-  padding: 5px 15px;
-  margin-right: 5px;
-}
-
-.slider li :hover {
-  color: white;
-  background-color: var(--text-accent);
-  transition: all 0.6s;
-}
-
-@media (width <=900px) {
-  .segundo_wrap {
-    max-width: 800px;
-    margin: 0px auto;
-    padding: 10px 10%;
-  }
-}
-
-/* media  */
-@media (width<=800px) {
-  .header__section-upper {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .logo {
-    margin: auto auto 0px;
-    margin-bottom: 0px;
-  }
-
-  nav {
-    margin: auto;
-  }
-
-  nav ul {
-    padding: 0px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .recipe__item:hover .hide_container-tags {
-    display: block;
-    /*Show the recipe__item-tags when .recipe__item-container is hovered */
-  }
-
-}
-
-@media (width<=600px) {
-  .hide_container-instructions {
-    display: none;
-  }
-
-  .recipe__item:hover .hide_container-instructions {
-    display: block;
-  }
-}
-
-.hide_container-tags {
-  display: none;
-  /* Initially hide the recipe__item-tags */
-}
-
-.recipe__item:hover .hide_container-tags {
-  display: block;
-}
-
-.recipe__item-tags li {
-  display: block;
-  text-decoration: none;
-}
+.hide_container-tags{display:none}
+.recipe__item:hover .hide_container-tags{display:block}
+.recipe__item-tags li{display:block;text-decoration:none}
+.footer__container{display:flex;flex-direction:row;justify-content:space-between}
